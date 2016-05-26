@@ -1,0 +1,2 @@
+[System] Insert Collection: [langs],Data:title=Custom Content ,lang=zh ,body=自定义内容 ,status=0 ,created=0.95900000 1464244252 ,updated=0.95900000 1464244252  IP: 127.0.0.1 User ID:57442ada1d9bdafc4e0041b7 UserName:admin	 [2016-05-26 14:30:52]
+[System] Update  Collection: [configs],Condition: _id=573f36f01d9bdafc4e0041ac  Data:title=admin_title ,body=<p><span style="line-height: 1.45em; background-color: initial;">ADMIN</span><br></p> ,status=0 ,updated=0.13900000 1464244385  IP: 127.0.0.1 User ID:57442ada1d9bdafc4e0041b7 UserName:admin	 [2016-05-26 14:33:05]

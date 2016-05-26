@@ -1,0 +1,30 @@
+{
+    "name": "sunkangchina/r_demo",
+    "type": "router",
+    "description" : "php简单的路由",
+    "keywords": ["router", "framework"],
+    "license": "MIT", 
+    "require": {
+        "php": ">=5.5.0",
+        "alexgarrett/violin": "^2.2",
+        "erusev/parsedown": "^1.6",
+        "symfony/yaml": "^3.0",
+        
+        "dflydev/apache-mime-types": "^1.0",
+        "pimple/pimple": "^3.0"
+        
+        
+    },
+    "autoload": {
+         "files":[
+            "./package/core/_function.php",
+            "./package/_function.php"
+        ],
+         "psr-4": {
+            "package\\": "package/",
+            "core\\": "package/core/",
+            "": "src/"
+        } 
+    }
+
+}
