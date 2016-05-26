@@ -4,6 +4,26 @@ use MongoDate as md;
 use db;
 class post{
 
+	static function get($slug){
+		$data = db('posts')->findOne([
+				 'slug'=>$slug
+			]);
+		return $data;
+	}
+
+	static function get_banner(){
+		$data = db('posts')->find([
+				 'tag'=>'banner'
+			])->sort(['_id'=>-1]);
+		return $data;
+	}
+
+	static function get_tag(){
+		$data = db('posts')->find([
+				 'tag'=>['$exists'=>true,'$ne'=>'banner']
+			])->sort(['_id'=>-1]);
+		return $data;
+	}
 
 	static function get_group_by_date(){
 			 

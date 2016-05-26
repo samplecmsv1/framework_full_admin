@@ -9,9 +9,8 @@
     <title><?php echo strip_tags(db_config('admin_title'));?></title>
     <meta name="keywords" content="<?php echo $keywords;?>" />
 	<meta name="description" content="<?php echo $description;?>" />
-	<meta name="author" content="<?php echo $author;?>" />
 	<meta name="date" content="<?php echo $date;?>" />
-    
+  <meta name="author" content="samplecms <sunkang@wstaichi.com>">
     
 
      <!-- Icons -->

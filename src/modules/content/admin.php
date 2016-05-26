@@ -53,19 +53,13 @@ class admin extends base {
 	
 		foreach($this->data['fields'] as $k=>$v){
 			$allowFields[] = $k;
-			if($v['int']===true){
-				$int[] = $k;
-			}
+			 
 		}
 		/**
 		 * 允许保存到数据库的字段
 		 * @var array $allowFields
 		 */
 		$this->obj->allowFields = $allowFields;
-		
-		$this->obj->int = $int;
-
-
 		 
 		$this->jump = url('content/admin/index',['q'=>$_GET['q']]);
 		
@@ -113,24 +107,27 @@ class admin extends base {
 			$setData = $_POST;
 			unset($setData['id']);
 			if($_GET['id']){
+				$update = true;
 				$condition = ['_id'=>new \MongoId($_GET['id'])];
 				$rt = $this->obj->updateValidate($condition,$setData);
 			}else{
+				$insert = true;
 				$rt = $this->obj->insertValidate($setData);
 			}
 
 			$data['status'] = 1;
 			$data['label'] = '系统未知错误';
 			$data['msg'] = '保存数据失败！！！';
-			if(is_array($rt) && $rt['errors']){
+			if($rt['errors']){
 				$data['msg'] = $rt['errors'];
-			}elseif(is_object($rt)){
+				$data['error'] = 1;
+			}elseif($insert==true){
 					$data = [
 							'status'=>1,
 							'msg'=>'添加成功',
 							'label'=>'提示信息',
 					];
-			}elseif($rt){
+			}elseif($update == true){
 				$data = [
 						'status'=>1,
 						'msg'=>'更新成功',

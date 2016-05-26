@@ -4,6 +4,10 @@
     position: relative;
 	
 }
+.form-group {
+    display: block;
+    clear: both;
+}
 .navbar{
   background: #1976D2;
 
@@ -70,5 +74,20 @@ text-decoration:none;
     background-color: #de4343;
     border-color: #c43d3d;
 }
- 
+
+
+.icon1{
+    width: 66px;
+    height: 19px;
+    line-height: 19px;
+    text-align: center;
+    display: block;
+    background: #6cc;
+    color: #fff;
+    position: absolute;
+    right: 16px;
+    top: -1px;
+    z-index: 999;
+    cursor: default;
+}
  

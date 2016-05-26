@@ -1,2 +1,0 @@
-# samplecms
-samplecms

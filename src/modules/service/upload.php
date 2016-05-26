@@ -1,7 +1,6 @@
 <?php
 namespace modules\service;
-use models\upload as UploadModel;
-use sys\str;
+use str;
 use Dflydev\ApacheMimeTypes\PhpRepository;
 class upload{
 	
@@ -11,7 +10,6 @@ class upload{
 	public $obj;
 	public $mime;
 	function __construct(){
-		$this->obj = new UploadModel;
 		$this->mime = new PhpRepository;
 	}
 	
@@ -22,7 +20,7 @@ class upload{
 		foreach($fs as $f){
 			$gid = $gid.$f->fileId;
 			$hash = $f->fileHash;
-			$one = $this->obj->findOne(['hash'=>$hash]);
+			$one = db('upload')->findOne(['hash'=>$hash]);
 			if($one){
 				$flag = true;
 			}else{
@@ -47,7 +45,7 @@ class upload{
 		}
 			
 		if($hash){
-			$one = (array)$this->obj->findOne(['hash'=>$hash]);
+			$one = (array)db('upload')->findOne(['hash'=>$hash]);
 			if($one){
 				unset($one['_id'],$one['uid'],$one['time']);
 				exit(json_encode($one+$ret));
@@ -121,10 +119,10 @@ class upload{
 					$data['uid'] = $uid;
 				}
 				 
-				$nid = $this->obj->insert($data);
+				$nid = db('upload')->insert($data);
 					
 				if(!$hash){
-					$this->obj->update(['_id'=>$nid],['hash'=>$h1]);
+					db('upload')->update(['_id'=>$nid],['hash'=>$h1]);
 					$data['hash'] = $h1;
 				}
 				exit(json_encode($data+$ret));

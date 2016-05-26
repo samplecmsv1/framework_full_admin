@@ -6,9 +6,9 @@
 	  			'ele'=>'file',
 	  			'option'=>[
 		  			//'CKEDITOR'=>$field,
-					'maxSize'=>'30',
+					'maxSize'=>50,
 	  				'class'=>'upload',
-	  				'count'=>100,
+	  				'count'=>50,
 	  				'data'=>$data[$field],
 		  		]			
 		]);

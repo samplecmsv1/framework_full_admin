@@ -41,14 +41,14 @@ class plupload extends base{
 		
 		$data = $this->option['data'];
 		
-		$m1 = (int)ini_get('post_max_size');
-		$m2 = (int)ini_get('upload_max_filesize');
-		$m3 = (int)ini_get('max_file_uploads');
+		$m1 = ini_get('post_max_size');
+		$m2 = ini_get('upload_max_filesize');
+		$m3 = ini_get('max_file_uploads');
 		if($this->option['size'] > $m1 || $this->option['size']>$m2
 				||$this->option['count']>$m3
 				){
-					echo "<div class='alert alert-danger'>上传设置有问题,请配置php.ini</div><br>";
-					return;
+					//echo "<div class='alert alert-danger'>上传设置有问题,请配置php.ini</div><br>";
+					//return;
 		}
 		
 		$this->setELE();
@@ -270,6 +270,8 @@ class plupload extends base{
 					$('#".$this->uploadBtn."_0').append(html);
 					".$str."
 				}
+
+				pluploadRemoveFile();
 			});
 			".$var." .init();
 		

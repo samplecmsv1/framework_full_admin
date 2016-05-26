@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-default">
+<nav id='top' class="navbar navbar-default">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -10,7 +10,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand animated infinite swing" ><?php echo db_config('home');?></a>
+      <a class="log " >
+        
+      </a>
     </div>
 
    

@@ -6,18 +6,16 @@ class base extends \core\models\base{
 	
 	function insertValidate($data=[]){
 		if($this->tbVersion){
-			parent::insertValidate($data);
 			$data['version'] = date('YmdHis');
-			return db($this->tbVersion)->insert($data);
+			db($this->tbVersion)->insert($data);
 		}
 		return parent::insertValidate($data);
 	}
 	
 	function updateValidate($condition=[] , $data=[]){
 		if($this->tbVersion){
-			parent::updateValidate($condition,$data);
 			$data['version'] = date('YmdHis');
-			return db($this->tbVersion)->insert($data);
+			db($this->tbVersion)->insert($data);
 		}
 		return parent::updateValidate($condition,$data);
 	}

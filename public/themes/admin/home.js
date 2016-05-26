@@ -18,6 +18,15 @@ function ajaxForm(){
 		$(id).ajaxForm({ 
 				dataType:'json',
 			    success:function(d){ 
+			    	if(d.error){
+			    		$('#myModal').addClass('alert alert-warning');
+			    		$('#myModal .modal-header').addClass('alert alert-warning');
+			    	}else{
+			    		$('#myModal').removeClass('alert alert-warning');
+			    		$('#myModal .modal-header').removeClass('alert alert-warning');
+			    		$('#myModal').addClass('alert alert-success');
+			    		$('#myModal .modal-header').addClass('alert alert-success');
+			    	}
 			    	if(d.label){
 			    		$('#myModal .modal-title').html(d.label);
 			    	}

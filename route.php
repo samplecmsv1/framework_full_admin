@@ -24,7 +24,8 @@ get('/|posts', function(){
 get('post/<slug:\w+>', function($slug){
 	$t = strip_tags(db_config('home_title'));
 	$data['title'] = $t;
-	$data['post'] = model('post')->findOne(['slug'=>$slug]);
+	$data['post'] = data\post::get($slug);
+	
 	return view('post',$data);
 });
 

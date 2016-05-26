@@ -10,25 +10,29 @@ class post extends base{
 	 	'category'=>[
 	 		'label'=>'分类',
 	 		'element'=>'category',
-	 		'int'=>false,
+	 		 
 	 	],
 
 	 	'body'=>[
 	 		'label'=>'内容',
 	 		'element'=>'textarea',
-	 		'int'=>false,
+	 		
 	 	],
-
+	 	'tag'=>[
+	 		'label'=>'标签',
+	 		'element'=>'txt',
+	 		
+	 	],
 	 	'file'=>[
 	 		'label'=>'文件',
 	 		'element'=>'file',
-	 		'int'=>false,
+	 		
 	 	], 
 	 	
 	 	'slug'=>[
-	 		'label'=>'唯一标识',
+	 		'label'=>'URI标识',
 	 		'element'=>'txt',
-	 		'int'=>false,
+	 		
 	 	],
 	 	
 

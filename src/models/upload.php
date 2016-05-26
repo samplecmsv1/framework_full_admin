@@ -1,5 +1,5 @@
 <?php namespace models;
-class upload extends \model{
+class upload extends base{
 	
 	public $tb = 'upload';
 	
