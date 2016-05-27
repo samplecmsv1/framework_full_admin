@@ -389,10 +389,6 @@ class router{
 		  $a = substr($class,0,strpos($class,'\\'));
 		  $b = substr($class,strpos($class,'\\')+1);
 		  $cls = static::$module.'\\'.$a."\\".$b;
-		  if(!class_exists($cls)) {
-		  	//$class = str_replace('Default\\','',$class);
-		  	//$cls = 'Controllers'.'\\'.ucfirst($class);
-		  }
 		  return $cls; 
 	}
 	/**
@@ -409,7 +405,7 @@ class router{
 		static::$current_class = $class;
 		$this->class_exists($class,$ac);
 		$obj = new $class;    
-		echo call_user_func_array([$obj,$ac],$data); 
+		return call_user_func_array([$obj,$ac],$data); 
 		 
 	}
 	/**

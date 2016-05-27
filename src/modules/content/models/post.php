@@ -1,6 +1,6 @@
 <?php
-namespace modules\content\custom_content;
-use models\base;
+namespace modules\content\models;
+
 class post extends base{
 	public $title = "文章";
 	public $tb = 'posts';

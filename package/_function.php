@@ -11,9 +11,14 @@ di::set('mongo',function($c){
 	return new mongo;
 });
 
+ 
+
+
 function db($collection){
 	return di::get('mongo')->table($collection);
 }
+
+ 
 
 
 

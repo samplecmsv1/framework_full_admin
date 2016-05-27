@@ -1,5 +1,5 @@
 <?php
-$obj = obj('\modules\content\custom_content\category');
+$obj = obj('\modules\content\models\category');
 $category = $obj->getTree($data[$field]);
 ?>
 

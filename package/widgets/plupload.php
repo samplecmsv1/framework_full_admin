@@ -41,15 +41,7 @@ class plupload extends base{
 		
 		$data = $this->option['data'];
 		
-		$m1 = ini_get('post_max_size');
-		$m2 = ini_get('upload_max_filesize');
-		$m3 = ini_get('max_file_uploads');
-		if($this->option['size'] > $m1 || $this->option['size']>$m2
-				||$this->option['count']>$m3
-				){
-					//echo "<div class='alert alert-danger'>上传设置有问题,请配置php.ini</div><br>";
-					//return;
-		}
+		 
 		
 		$this->setELE();
 		$var = $this->var;
@@ -76,7 +68,7 @@ class plupload extends base{
 				function insertHtmlPlupload(){
 					$(\".pluploadCkeditor img\").click(function(){
 						var str = '<img src=\"'+$(this).attr(\"src\")+'\"/>';
-						//CKEDITOR.instances.".$this->option['CKEDITOR'].".insertHtml(str);
+						
 					});
 				}
 								
@@ -94,25 +86,20 @@ class plupload extends base{
 		
 		$var = $this->var;
 		
-		
+		////CKEDITOR.instances.".$this->option['CKEDITOR'].".insertHtml(str);
 		
 		
 		$this->script[] = "
 			var ".$var." =
 			new plupload.Uploader({
 			browse_button: '".$this->uploadBtn."',
-			// General settings
 			runtimes : 'html5,flash,silverlight,html4',
 			url : '".$this->option['url']."',
-		//	max_file_count: ".$this->option['count'].",
 			max_total_file_count : ".$this->option['count'].",
-		//	chunk_size: '".$this->option['size']."+mb',
-		//	chunk_size: '".($this->option['maxSize']+10)."mb',
+			chunk_size: '".$this->option['size']."+mb',
 			multipart:true,
 			filters : {
-				// Maximum file size
 				max_file_size : '".$this->option['maxSize']."mb',
-				// Specify what files to browse for
 				mime_types: [
 					{title : \"选择文件\", extensions : '".$this->option['ext']."'}
 				]
@@ -145,7 +132,6 @@ class plupload extends base{
 					 			});
 		
 					 	};
-					 	//if the file is out of buffer size ,hash the left block
 					 	handle_hash_block = function(event) {
 					 		threads -= 1;
 					 		if (threads === 0) {
@@ -163,7 +149,6 @@ class plupload extends base{
 					 			}
 					 		}
 					 	};
-					 	//buffer size
 					 	buffer_size = 64 * 16 * 1024;
 		
 					 	block = {

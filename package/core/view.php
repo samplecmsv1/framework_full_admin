@@ -103,7 +103,7 @@ class view
 	* @return void 
 	*/
 	function extend($name,$par = []){ 
-		$name = str_replace('.','/',$name);
+		
 		$this->__ex($name); 
 		$same_level_file = static::$keep_dir;
 		if($same_level_file){
@@ -253,12 +253,27 @@ class view
 		$data = trim(ob_get_contents());   
 		ob_end_clean();
 		if(true === static::$minify){
-			$data =  preg_replace(array('/ {2,}/','/<!--.*?-->|\t|(?:\r?\n[\t]*)+/s'),array(' ',''),$data);  
+			$replace = array(
+                '/<!--[^\[](.*?)[^\]]-->/s' => '',
+                "/<\?php/"                  => '<?php ',
+                "/\n([\S])/"                => ' $1',
+                "/\r/"                      => '',
+                "/\n/"                      => '',
+                "/\t/"                      => ' ',
+                "/ +/"                      => ' ',
+            );
+            $data =  preg_replace(
+                array_keys($replace), array_values($replace), $data
+            );
+
 		} 
 		if(static::$cache!== false && static::$cache >= 0){
 			$url = static::cacheHtml();   
 			file_put_contents($url,$data); 
 		} 
+		
+		
+
 		return $data;  
 	} 
 	 

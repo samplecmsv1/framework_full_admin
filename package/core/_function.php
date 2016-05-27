@@ -22,7 +22,11 @@ $class_alias = [
 foreach($class_alias as $k=>$v){
 	class_alias($k, $v);	
 }
+
+
+
  
+
 
 function import($file){
 	static $m;

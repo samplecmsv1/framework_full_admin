@@ -1,7 +1,7 @@
 <?php
-namespace modules\content\custom_content;
-use models\_tree;
-class category extends _tree{
+namespace modules\content\models;
+
+class category extends base{
 	public $title = "分类";
 	public $tb = 'category';
 	public $tbVersion = "version_category";

@@ -8,7 +8,6 @@ class admin extends base  {
 	 
 	 function init(){
 	 	parent::init();
-	 	view_minify(config('app.minify')?:false);
 	 	theme('admin');
 	 }
 	 

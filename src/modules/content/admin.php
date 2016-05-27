@@ -13,14 +13,15 @@ class admin extends base {
 	public $disable = false;
 	
 	protected function get_dir(){
-		$model = "\modules\content\custom_content\\";
-		$list = scandir(__DIR__.'/custom_content');
+		$model = "\modules\content\models\\";
+		$list = scandir(__DIR__.'/models');
 		foreach($list as $v){
 			if(!in_array($v,[
 				'.','..','./svn'
 
 				])
 				&& substr($v,-4) == '.php'
+				&& $v != 'base.php'
 			){
 				$v =substr($v,0,-4);
 				$a  = $model.$v;
@@ -39,9 +40,13 @@ class admin extends base {
 		if(!$q){
 			goto end;
 		}
-		$model = "\modules\content\custom_content\\$q";
+		$model = "\modules\content\models\\$q";
 		$this->obj = new $model;
-		$this->data['fields'] = $this->obj->fields;
+		$this->data['fields'] = $this->obj->get_fields();
+		$this->data['index'] = 'index/'.$this->obj->get_lists_name();
+		$this->data['view'] = $this->view = 'form/'.$this->obj->get_form_name();
+
+
 		$allowFields = [
 				'title','status'
 				
@@ -59,9 +64,9 @@ class admin extends base {
 		 * 允许保存到数据库的字段
 		 * @var array $allowFields
 		 */
-		$this->obj->allowFields = $allowFields;
+		$this->obj->allowFields = $allowFields+$this->obj->allowFields;
 		 
-		$this->jump = url('content/admin/index',['q'=>$_GET['q']]);
+		$this->jump = url('content/admin/'.$this->data['list'],['q'=>$_GET['q']]);
 		
 		$this->data['type'] = $this->obj->title;
 		end:
@@ -91,7 +96,7 @@ class admin extends base {
 		return $this->render('go',$data);
 	}
 	function index() {
-
+		$this->view = $this->data['index'];
  		return parent::index();
 	}
 	
