@@ -26,24 +26,4 @@
 
 * BUG提交: [ISSUE](https://github.com/samplecms/samplecms/issues)
 
-
-##捐助开发者(支付宝，扫下图)
-
-
-在兴趣的驱动下,写一个`免费`的东西，有欣喜，也还有汗水，希望你喜欢我的作品，同时也能支持一下。
-
-当然，有钱捧个钱场，没钱捧个人场，谢谢各位。
-
-
-
-![支付宝](/data/alipay.png)
-
-
-
-##关于
-
-```javascript
-  var web = {
-    site : "http://www.samplecms.cn"
-  }
-```
+  
