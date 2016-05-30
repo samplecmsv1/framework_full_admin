@@ -1,15 +1,24 @@
 #top{
 	height: 71px;
-    background: url('http://pinyin.sogou.com/zimeiti/assets/default/images/home/nav_bg.png') repeat-x 0 -1px;
+    background: url('/themes/home/nav_bg.png') repeat-x 0 -1px;
     width: 100%;
 }
 
+.nav{
+        margin-top: 21px;
+}
+
+#top .container{
+        position: absolute;
+        z-index: 99;
+}
 #top .log{
 	width: 310px;
     height: 71px;
     float: left;
     display: inline-block;
-    background: url('http://pinyin.sogou.com/zimeiti/assets/default/images/home/logo.png') no-repeat 0 top;
+        font-size: 53px;
+    line-height: 67px;
 }
 .hot{
 	width: 100%;
@@ -18,7 +27,7 @@
     padding-left: 14px;
     font-size: 18px;
     font-weight: 600;
-    background: url(http://pinyin.sogou.com/zimeiti/assets/default/images/home/title-line.png) 0 5px no-repeat;
+   
 }
 
 .icon1{
@@ -35,7 +44,43 @@
     z-index: 999;
     cursor: default;
 }
-
+.titBar a.mCulture:hover {
+    background-color: #abeca9;
+}
+.titBar a.mCulture {
+    color: #51b44e;
+    border: 1px solid #abeca9;
+}
+.titBar a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    float: left;
+    margin: 10px 10px 0 0;
+    padding: 0 10px;
+}
+.titBar .add_time {
+    color: #999;
+    font-size: 12px;
+    float: right;
+}
+ .txtMain {
+    border-bottom: 1px solid #e9e9e9;
+    padding: 25px 0;
+}
+ .titBar .author {
+    color: #666;
+    font-size: 14px;
+    float: left;
+    display: inline;
+}
+ .titBar {
+    height: 42px;
+    line-height: 42px;
+    font-family: '微软雅黑';
+}
 #footer {
     margin: 0 auto;
     _display: inline;
@@ -70,3 +115,4 @@
     padding: 25px 0 19px;
     border-bottom: 1px solid #e5e5e5;
 }
+  

@@ -62,12 +62,12 @@
   
 
   ?>
-
+<?php widget_render();?>
 <link rel="stylesheet" type="text/css" href="<?php echo theme_url('css/style.css');?>">
 	 
   <?php echo $this->view['footer'];?>
 
-  <?php widget_render();?>
+  
 
   </body>
 </html>

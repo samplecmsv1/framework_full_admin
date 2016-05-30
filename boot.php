@@ -7,16 +7,16 @@ import(__DIR__.'/src/core_function.php');
 import(__DIR__.'/function.php');
  
 
-if(in_array(ip(),['127.0.0.1','::1','180.158.173.171'])){
+if(in_array(ip(),['127.0.0.1','::1'])){
 	ini_set('display_errors',1);
 	error_reporting(E_ALL & ~(E_STRICT | E_NOTICE));
 }
 
+view_minify(true);
 
 
 
-
-log_open();
+//log_open();
 
 import(__DIR__.'/route.php');	
 

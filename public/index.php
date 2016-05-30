@@ -14,4 +14,8 @@ import(__DIR__.'/../boot.php');
 
 
 
-echo router::run();  
+$run =  router::run();  
+ 
+
+
+echo $run;

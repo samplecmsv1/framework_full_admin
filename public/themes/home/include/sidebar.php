@@ -10,8 +10,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="log " >
-        
+      <a class="log "  href="/">
+          <?php echo db_config('title');?>
       </a>
     </div>
 
@@ -23,12 +23,14 @@
          
          <?php 
     $menu = [
-    'Home'=>'home/posts/index',
-     
+      'HOME'=>'home/home/index',
+      'CLASSES'=>'home/home/classes',
+      'WU STYLE TAICHI'=>'home/home/taichi',
+      'CONNECT'=>'home/home/connect',
     
     ];
     $arr = url_array();
-    $current = $arr['module'].'/'.$arr['controller'];
+    $current = $arr['module'].'/'.$arr['controller'].'/'.$arr['action'];
     foreach ($menu as $k=>$v){
     ?>
     <li <?php if(strpos($v,$current)!==false){echo "class='active'";} ?> 

@@ -54,10 +54,10 @@
   ?>
   <?php echo $this->view['footer'];?>
 
-  <?php widget_render();?>
-
  
-
+  <?php echo $this->view['js1'];?>
+  <?php widget_render();?>
+<?php echo $this->view['js2'];?>
 <link rel="stylesheet" href="<?php echo theme_url('css/journal.css');?>">
 <link rel="stylesheet" href="<?php echo theme_url('css/style.css');?>">
 <link rel="stylesheet" href="<?php echo base_url().'misc/animate.css';?>">
