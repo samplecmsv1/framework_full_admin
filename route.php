@@ -1,39 +1,13 @@
 <?php
-$theme = $_GET['t'];
+ 
 
-$arr = [
-	'a'=>'jekyll_hyde',
-	'b'=>'jekyll_lanyon',
-	'c'=>'jekyll_left',
-	'd'=>'jekyll_skinny',
-
-];
-$t = $arr[$theme]?:'home';
-
-theme($t);
-
-
-
-get('/|posts', function(){
+get('/', function(){
 	 
- 	$t = strip_tags(db_config('home_title'));
- 	$data['title'] = $t;
-	return view('index',$data);
+ 	echo 'its work.';
+
+ 	echo "<a href='".url('home/home/index')."'>".url('home/home/index')."</a>";
 });
 
-get('post/<slug:\w+>', function($slug){
-	$t = strip_tags(db_config('home_title'));
-	$data['title'] = $t;
-	$data['post'] = data\post::get($slug);
-	
-	return view('post',$data);
-});
-
-get('about', function(){
-	$t = strip_tags(db_config('home_title'));
-	$data['title'] = $t;
-	return view('about',$data);
-});
-
+get('demo','home\home@index');
 
 get('admin','admin\home@index');

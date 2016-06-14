@@ -1,14 +1,8 @@
 <?php
 return [
-	//cookie session 加密 KEY
+	//cookie session 加密 KEY，请修改
 	'crypt'=>'admin',	
-		
-	'lang'=>'zh',
-	
-	'langs'=>[
-		'zh'=>'简体中文',
-		'en'=>'ENGLISH',
-	],
+	 
 		
 		
 ];

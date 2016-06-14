@@ -20,19 +20,5 @@ view_minify(true);
 
 import(__DIR__.'/route.php');	
 
-
-
-$init_write_able_dir = [
-		'runtime/log',
-		'runtime',
-		'public/upload',
-		'public/assets'
-];
  
-if(!is_dir(BASE.'/runtime')){
-	dump($init_write_able_dir);
-}
-
-
-
  
