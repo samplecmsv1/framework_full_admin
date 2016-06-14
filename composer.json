@@ -10,7 +10,8 @@
     },
     "autoload": {
          "files":[
-            "./package/_function.php"
+            "./package/_function.php",
+            "./function.php"
         ],
          "psr-4": {
             "": "./"
