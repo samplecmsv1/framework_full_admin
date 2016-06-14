@@ -35,7 +35,7 @@ class base{
 		$dir = 'assets/'.$name.'/';
 		$to = WEB.'/'.$dir;
 		if(!is_dir($to)){
-			file_cpdir(__DIR__.'/'.$dir,$to);
+			@file_cpdir(__DIR__.'/'.$dir,$to);
 		}
 		return base_url().$dir;
 
